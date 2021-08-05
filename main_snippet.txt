@@ -20,7 +20,7 @@
 #include <stdlib.h>
 #include <assert.h>
 using namespace std;
-
+ 
 //define
 #define IOS ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 typedef long long ll;
@@ -36,76 +36,29 @@ typedef long long ll;
 #define pb push_back
 #define read_2d(n,m) ll n,m; cin>>n>>m; vector<vector<ll>> v(n,vector<ll>(m,0));for(ll i=0;i<n;i++){for(ll j=0;j<m;j++){cin>>v[i][j];}}
 #define print_2d(v,n,m) for(ll i=0;i<n;i++){for(int j=0;j<m;j++){cout<<v[i][j]<<" ";}cout<<endl;}
+#define sorta(v) sort(v.begin(),v.end());
+#define sortd(v) sort(v.begin(),v.end(),greater<int>());
 
-void io(){
-	#ifndef ONLINE_JUDGE
-    freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
-    #endif
-}
-ll value[1000001];
-void fillNumberOfDivisorsArray(){
-    for(ll i=1;i<=1000000;i++){
-        for(ll j=1;i*j<=1000000;j++){
-            value[i*j]++;
-        }
-    }
-}
-bool SeiveArray[40000];
-vector<ll> PrimeNumArray;
-void seiveFill(){
-    memset(SeiveArray,true,sizeof(SeiveArray));
-    SeiveArray[0] = SeiveArray[1] = false;
-    for(ll i=2;i<40000;i++){
-        if(SeiveArray[i]) PrimeNumArray.pb(i);
-        for(ll j=i*2;j<40000;j+=i){
-            SeiveArray[j] = false;
-        }
-    }
-}
-ll PrimeF(ll num){
-    ll count = 0;
+
     
-    for(auto n:PrimeNumArray){
-        while(num%n==0){
-            num = num/n;
-            count++;
-        }
-    }
-    if(num>1) count++;
-    return count;
+void solve(){
+  
 }
-ll B_expo(int a, int b, int n){
-    ll x=1, y=a; 
-    while (b > 0) {
-        if (b%2 == 1) {
-            x = (x*y) % n; // multiplying with base
-            
-        }
-        y = (y*y) % n; // squaring the base
-        b /= 2;
-    }
-    return x % n;
+  
+
+int main() {
+	
+	int t;
+	cin>>t;
+  	while(t--)
+	    solve();
+	
+	return 0;
 }
 
-void solve(){
-	
-}  
-int main(){ 
-	io();
-	IOS;
-	int t; 
-	cin>>t; 
-	
-	while(t--){
-		solve();
-	} 
-	return 0;
-	
-}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>believe</tabTrigger> 
+	<tabTrigger>believe</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.c++</scope>
 </snippet>
