@@ -48,6 +48,7 @@ void solve(){
     }
    
     bool del = false;
+ // check if the difference between the two strings is even or odd
     ll i = (s.length()-t.length())&1;
     bool first_char = false;
     string to_check = "";
@@ -62,6 +63,7 @@ void solve(){
             i++;
             j++;
         } 
+     // if the characters in both strings are not equal we have to skip two characters i.e we will type one character and delete the next one
         else {
             del = true;
             i++;
