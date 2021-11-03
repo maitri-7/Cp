@@ -1,7 +1,7 @@
 ll getPar(ll x,vector<ll>& par){
 
     if(par[x]==x) return x;
-
+    //PATH COMPRESSION OPTIMIZATION
     par[x] = getPar(par[x],par);
 
     return par[x];
@@ -10,7 +10,7 @@ ll getPar(ll x,vector<ll>& par){
 void unitePar(ll x,ll y,vector<ll>& par,vector<ll>& sz){
 
     ll p1=getPar(x,par),p2=getPar(y,par);
-
+    //UNIION BY RANK OPTIMIZATION
     if(sz[p1]>sz[p2]){
 
       par[p2]=p1;
